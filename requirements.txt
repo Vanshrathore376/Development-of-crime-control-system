@@ -1,0 +1,7 @@
+Flask
+opencv-contrib-python>=4.10.0
+numpy
+WerkzeugFlask
+opencv-contrib-python>=4.10.0
+numpy
+Werkzeug

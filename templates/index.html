@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Crime Control Face Recognition
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <div>
+        <h1>Crime Control System</h1>
+
+        <p>
+            AI-Based Face Recognition
+        </p>
+    </div>
+
+    <div class="status">
+        ● System Online
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- ADD PERSON -->
+
+    <section class="card">
+
+        <h2>Register Person</h2>
+
+        <p class="description">
+            Add a reference image and person details
+            to the database.
+        </p>
+
+        <form id="personForm">
+
+            <label>
+                Person Name
+            </label>
+
+            <input
+                type="text"
+                id="personName"
+                placeholder="Enter person name"
+                required
+            >
+
+            <label>
+                Case ID
+            </label>
+
+            <input
+                type="text"
+                id="caseId"
+                placeholder="Example: CASE-001"
+            >
+
+            <label>
+                Reference Image
+            </label>
+
+            <input
+                type="file"
+                id="referenceImage"
+                accept="image/*"
+                required
+            >
+
+            <button type="submit">
+                Add Person
+            </button>
+
+        </form>
+
+        <div id="personMessage"></div>
+
+    </section>
+
+
+    <!-- IDENTIFICATION -->
+
+    <section class="card">
+
+        <h2>Identify Person</h2>
+
+        <p class="description">
+            Select a registered person and upload
+            a group or crowd image.
+        </p>
+
+        <label>
+            Select Person
+        </label>
+
+        <select id="personSelect">
+
+            <option value="">
+                Select person
+            </option>
+
+        </select>
+
+        <label>
+            Group / Crowd Image
+        </label>
+
+        <input
+            type="file"
+            id="groupImage"
+            accept="image/*"
+        >
+
+        <button id="identifyButton">
+            Identify Person
+        </button>
+
+        <div id="resultMessage"></div>
+
+    </section>
+
+
+    <!-- RESULT -->
+
+    <section
+        class="card result-card"
+        id="resultSection"
+        style="display:none;"
+    >
+
+        <h2>Recognition Result</h2>
+
+        <div id="resultSummary"></div>
+
+        <img
+            id="resultImage"
+            class="result-image"
+            alt="Recognition result"
+        >
+
+        <div id="faceResults"></div>
+
+    </section>
+
+</main>
+
+
+<script src="{{ url_for('static', filename='script.js') }}">
+</script>
+
+</body>
+
+</html>
